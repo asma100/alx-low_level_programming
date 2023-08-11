@@ -1,7 +1,7 @@
 #include <stdio.h>
-int main(void)
+
 /**
- *main - Prints the sizeof
+ *main :Prints the sizeof
  *Return: 0
  *
  */
