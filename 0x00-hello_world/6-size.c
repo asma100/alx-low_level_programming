@@ -1,10 +1,10 @@
 #include <stdio.h>
 int main(void)
 /**
-* main - Prints  sizeof 
-*
-* 
-*/
+ *Description: main - Prints  sizeof 
+ *
+ *
+ */
 {
 char a;
 int s;
