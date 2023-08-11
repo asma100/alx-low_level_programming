@@ -1,10 +1,11 @@
 #include <stdio.h>
 int main(void)
 /**
- *main - Prints  sizeof
- *Return: 0 
+ *main - Prints the sizeof
+ *Return: 0
  *
  */
+int main(void)
 {
 char a;
 int s;
