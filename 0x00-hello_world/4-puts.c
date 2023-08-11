@@ -1,8 +1,9 @@
 #include<stdio.h>
-int main(void)
 /**
- *put task
+ *main-put task
+ *Return:0
  */
+int main(void)
 {
 puts("\"Programming is like building a multilingual 
 puzzle");
