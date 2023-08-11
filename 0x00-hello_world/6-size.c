@@ -1,8 +1,10 @@
 #include <stdio.h>
 int main(void)
 /**
- *the size task
- */
+* main - Prints  sizeof 
+*
+* 
+*/
 {
 char a;
 int s;
