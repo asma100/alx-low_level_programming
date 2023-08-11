@@ -1,8 +1,11 @@
 #include<stdio.h>
 int main(void)
-  /*put task*/
+/**
+ *put task
+ */
 {
-char Taskc[] = "\"Programming is like building a multilingual puzzle";
-puts(Taskc); 
+puts("\"Programming is like building a multilingual 
+puzzle");
+ 
 return (0);
 }

@@ -1,6 +1,8 @@
 #include <stdio.h>
 int main(void)
-/*the size task */
+/**
+ *the size task
+ */
 {
 char a;
 int s;
