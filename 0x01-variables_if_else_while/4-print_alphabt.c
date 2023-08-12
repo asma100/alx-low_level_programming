@@ -12,7 +12,7 @@ char end = 'z';
 char alpha = first;
 while (alpha <= end)
 {
-if(alpha != 'e' && alpha != 'q')
+if (alpha != 'e' && alpha != 'q')
 putchar(alpha);
 alpha++;
 }
