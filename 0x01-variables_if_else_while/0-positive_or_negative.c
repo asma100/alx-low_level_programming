@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdio.h>
 /**
- *main-positive or negative
+ *main - positive or negative
  *Returm:0
  */
 
