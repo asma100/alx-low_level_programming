@@ -13,8 +13,8 @@ char alpha = first;
 char first2 = 'A';
 char end2 = 'Z';
 char alpha2 = first2;
- while (alpha <= end)
-{      
+while (alpha <= end)
+{
 putchar(alpha);
 alpha++;
 }
