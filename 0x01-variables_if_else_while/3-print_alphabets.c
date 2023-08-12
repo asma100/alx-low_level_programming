@@ -1,18 +1,18 @@
 #include <stdio.h>
 
 /**
- * main - Prints the alphabet 
+ * main - Prints the alphabet
  *
  * Return:0
  */
 int main(void)
 {
 char first = 'a';
-char end = 'z' ;
-char alpha = first ;
+char end = 'z';
+char alpha = first;
 char first2 = 'A';
-char end2 = 'Z' ;
-char alpha2 = first2 ;
+char end2 = 'Z';
+char alpha2 = first2;
  while (alpha <= end)
 {      
 putchar(alpha);
