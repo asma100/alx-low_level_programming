@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+/**                                                                                                                                                                     
+ * main - Prints different combinations of two digits.                                                                                                                             
+ *                                                                                                                                                                      
+ * Return: Always 0.                                                                                                                                                    
+ */
+int main(void)
+{
+int first = 01;
+int end = 89;
+int alpha = first;
+while (alpha <= end)
+{
+if (alpha != 10 && alpha != 30 && alpha != 40 && alpha != 50&&alpha != 60 && alpha != 70&& alpha != 80)
+putchar(alpha+'0');
+alpha++;
+}
+putchar('\n');
+return (0);
+}
