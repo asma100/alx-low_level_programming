@@ -4,23 +4,19 @@
  *@c:  computed number 
  *Return: Absolute value or 0
  */
- int print_last_digit(int n){
-      
-    
-    int  v ,val ;
-    if (n < 0)
-        {
-          
-    v = n * -1;
-   _putchar(v%10+'0');
-    val=v%10;
-    return (val);
-        }
- else
- {
-v=n;
-   _putchar(v%10+'0');
-    val=v%10;
-    return (val);
- }
- }
+ 
+int print_last_digit(int n)
+{
+	int last;
+
+	last = n % 10;
+
+	if (last < 0)
+	{
+		last = last * -1;
+	}
+
+	_putchar(last + '0');
+
+	return (last);
+}
