@@ -5,16 +5,16 @@
  *
  * Return: The absolute value of the integer.
  */
-int _abs(int n )
+int _abs(int n)
 {
 if (n < 0)
 {
 int asb;
-asb=n * -1; 
-return(asb);
+asb = n * -1;
+return (asb);
 }
 else
 {
-return(n);
+return (n);
 }
 }
