@@ -1,17 +1,11 @@
 #include <stdio.h>
-void  multiples_sum(void);
+
 /**
  * main - check the code .
  * multiples_sum - prints the sum of all the multiples of 3 or 5.
  * Return: Always 0.
  */
 int main(void)
-{
-multiples_sum();
-return (0);
-}
-
-void  multiples_sum(void)
 {
 int i, sum = 0;
 
@@ -22,4 +16,5 @@ int i, sum = 0;
 	}
 
 	printf("%d\n", sum);
+return (0);	
 }
