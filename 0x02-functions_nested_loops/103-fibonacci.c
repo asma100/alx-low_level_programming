@@ -3,7 +3,7 @@
 /**
  * main -  prints the sum of the even-valued terms
  *
- * Return: Always 0 
+ * Return: Always 0
  */
 int main(void)
 {
@@ -14,7 +14,7 @@ int main(void)
 	b = 2;
 	sum = 0;
 
-	for (i = 1; i <= 20; ++i)
+	for (i = 1; i <= 70; ++i)
 	{
 		if (a < 4000000 && (a % 2) == 0)
 		{
