@@ -1,7 +1,7 @@
 #include <stdio.h>
 void  multiples_sum(void);
 /**
- * main - check the code
+ * 
  * multiples_sum - prints mulriples sum .
  * Return: Always 0.
  */
