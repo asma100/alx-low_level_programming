@@ -11,7 +11,7 @@ void  multiples_sum(void);
  */
 int main(void)
 {
-1multiples_sum();
+multiples_sum();
     return (0);
 }
 
