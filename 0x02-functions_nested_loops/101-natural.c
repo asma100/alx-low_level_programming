@@ -12,12 +12,12 @@ void  multiples_sum(void);
 int main(void)
 {
 multiples_sum();
-    return (0);
+ return (0);
 }
 
 void  multiples_sum(void)
 {
-   int i, sum = 0;
+  int i, sum = 0;
 
 	for (i = 0; i < 1024; i++)
 	{
