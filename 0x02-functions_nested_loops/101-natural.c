@@ -1,23 +1,19 @@
 #include <stdio.h>
 void  multiples_sum(void);
-
-
-
-
 /**
  * main - check the code
- *
+ *multiples_sum : sum numbers
  * Return: Always 0.
  */
 int main(void)
 {
 multiples_sum();
- return (0);
+return (0);
 }
 
 void  multiples_sum(void)
 {
-  int i, sum = 0;
+int i, sum = 0;
 
 	for (i = 0; i < 1024; i++)
 	{
