@@ -24,7 +24,7 @@ _putchar(minute_str[1]);
 _putchar('\n');
 if (hour == 23 && minute == 59)
 {
-break; 
+break;
 }
 }
 }
