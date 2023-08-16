@@ -1,10 +1,12 @@
 #include "main.h"
 
+
+
 /**
- * main - print _putchar
- * is written by mbah
- * Return: 0
+ * print_alphabet - print all alphabet in lowercase
  */
+
+
 
 void print_alphabet(void)
 {
