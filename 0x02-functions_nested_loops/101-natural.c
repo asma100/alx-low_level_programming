@@ -11,13 +11,10 @@ void  multiples_sum(void);
  */
 int main(void)
 {
-    
- multiples_sum();
- 
+1multiples_sum();
     return (0);
 }
 
-    
 void  multiples_sum(void)
 {
    int i, sum = 0;
