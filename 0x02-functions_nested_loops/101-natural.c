@@ -1,8 +1,8 @@
 #include <stdio.h>
 void  multiples_sum(void);
 /**
- * 
- * multiples_sum - prints mulriples sum .
+ * main - check the code .
+ * multiples_sum - prints the sum of all the multiples of 3 or 5.
  * Return: Always 0.
  */
 int main(void)
