@@ -16,5 +16,5 @@ int i, sum = 0;
 	}
 
 	printf("%d\n", sum);
-return (0);	
+return (0);
 }
