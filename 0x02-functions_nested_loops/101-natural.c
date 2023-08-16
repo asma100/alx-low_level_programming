@@ -2,7 +2,7 @@
 void  multiples_sum(void);
 /**
  * main - check the code
- *multiples_sum - sum numbers
+ * multiples_sum - sum numbers
  * Return: Always 0.
  */
 int main(void)
