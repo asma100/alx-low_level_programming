@@ -1,0 +1,21 @@
+#include "main.h"
+/**
+ * print_diagonal - print diagonal line
+ * @n: number of times the character \
+ */
+void print_diagonal(int n)
+{
+
+int i, j;
+for (i = 0; i <= n; i++)
+{
+_putchar('\\');
+_putchar('\n');
+for (j = n - i; j <= n; j++)
+{
+_putchar(' ');
+}
+
+}
+
+}
