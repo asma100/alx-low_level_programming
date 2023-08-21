@@ -5,8 +5,11 @@
  *
  */
  int _strlen(char *s){
-int i;
+   int cou, i;
 while (s[i]!= '\0')
-i++;
-return (i);
+ {
+ i++;
+ cou++;
+ }
+return (cou);
 }
