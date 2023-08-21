@@ -6,7 +6,7 @@
  */
  int _strlen(char *s){
    int cou, i;
-while (s[i]!= '\0')
+while (*s[i]!= '\0')
  {
  i++;
  cou++;
