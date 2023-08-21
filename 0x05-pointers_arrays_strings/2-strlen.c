@@ -5,7 +5,6 @@
  *
  */
  int _strlen(char *s){
-int i;
 int cou =0;
 while (*s != '\0')
 {
