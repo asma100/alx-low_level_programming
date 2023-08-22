@@ -1,0 +1,27 @@
+#include "main.h"
+ /**
+ * swap_int - swap number
+ * @a: The number one
+ * @b:The number two
+ * Return: On success 1.
+ *
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int l, i;
+
+	l = 0;
+
+	while (src[l] != '\0')
+	{
+		l++;
+	}
+
+	for (i = 0; i < l; i++)
+	{
+		dest[i] = src[i];
+	}
+	dest[i] = '\0';
+
+	return (dest);
+}
