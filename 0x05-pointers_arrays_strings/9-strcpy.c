@@ -1,11 +1,14 @@
 #include "main.h"
- /**
- * swap_int - swap number
- * @a: The number one
- * @b:The number two
- * Return: On success 1.
- *
+
+#include "main.h"
+
+/**
+ * char *_strcpy - a function that copies the string pointed to by src
+ * @dest: copy to
+ * @src: copy from
+ * Return: string
  */
+
 char *_strcpy(char *dest, char *src)
 {
 	int l, i;
