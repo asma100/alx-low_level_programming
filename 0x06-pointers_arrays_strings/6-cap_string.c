@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * string_toupper - change lowercase to uppercase if needed
+ * cap_string - change lowercase to uppercase if needed
  * @u: upper output
  *
  * Return: u
