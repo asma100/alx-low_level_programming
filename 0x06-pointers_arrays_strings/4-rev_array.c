@@ -13,7 +13,7 @@ int j;
 int i;
 int x;
 j = n;
-for (i = 0;i < j;i++)
+for (i = 0; i < j; i++)
 {
 j--;
 x = a[i];
