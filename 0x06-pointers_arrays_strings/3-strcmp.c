@@ -27,5 +27,4 @@ return (s1[i] - s2[j]);
 i++;
 j++;
 }
-return (0);
 }
