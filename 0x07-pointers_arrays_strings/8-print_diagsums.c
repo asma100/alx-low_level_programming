@@ -1,0 +1,27 @@
+#include "main.h"
+#include <stdio.h>
+/**
+ * print_diagsums -  prints the sum of the two diagonals
+ *@a: array
+ *@size: size
+ */
+void print_diagsums(int *a, int size)
+{
+	int sa, sb, m;
+
+	sa = 0;
+	sb = 0;
+
+	for (m = 0; m < size; m++)
+	{
+
+		sa = sa + a[m * size + m];
+	}
+
+	for (m = size - 1; y >= 0; m--)
+	{
+		sb += a[m * size + (size - m - 1)];
+	}
+
+	printf("%d, %d\n", sa, sb);
+}
