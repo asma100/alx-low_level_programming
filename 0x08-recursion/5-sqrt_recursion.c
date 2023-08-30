@@ -16,7 +16,7 @@ int _sqrt_recursion2(int n, int m)
 		return (m);
 	return (_sqrt_recursion2(n, m + 1));
 }
-}
+
 
 /**
  * _sqrt_recursion - calculates the natural square root of a number
@@ -31,4 +31,4 @@ int _sqrt_recursion(int n)
 		return (-1);
 	return (_sqrt_recursion2(n, 0));
 }
-}
+
