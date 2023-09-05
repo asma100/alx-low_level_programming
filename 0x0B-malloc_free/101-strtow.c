@@ -21,7 +21,7 @@ num_words = count_words(str);
 if (num_words == 0)
 return (NULL);
 words = split_string(str, num_words);
-if (words == (NULL)
+if (words == NULL)
 return (NULL);
 return (words);
 }
