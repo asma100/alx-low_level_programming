@@ -17,7 +17,7 @@ for (g = 0; g < ac; g++)
 for (h = 0; av[g][h]; h++)
 k++;
 }
-k =k+ac;
+k = k + ac;
 str = malloc(sizeof(char) * k + 1);
 if (str == NULL)
 return (NULL);
