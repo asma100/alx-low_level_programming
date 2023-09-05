@@ -11,11 +11,11 @@ char *_strdup(char *str)
 int i;
 char *m;
 int l;
-l = _strlen(str);
 if (str == NULL)
 {
 return (NULL);
 }
+l = _strlen(str);
 m = malloc(sizeof(char) * (l + 1));
 if (m == NULL)
 {
@@ -26,10 +26,10 @@ while (str[i])
 {
 m[i] = str[i];
 i++;
+
 }
 return (m);
 }
-
 /**
  * _strlen - returns the length of a string
  * @s: string to evaluate
