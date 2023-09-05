@@ -18,7 +18,7 @@ if (m == NULL)
 return (NULL);
 }
 i = 0;
-while (i < 6)
+while (i < '\0')
 {
 m[i] = *(str++);
 i++;
