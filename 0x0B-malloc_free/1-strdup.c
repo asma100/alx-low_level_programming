@@ -10,7 +10,9 @@ char *_strdup(char *str)
 {
 int i;
 char *m;
-m = malloc(sizeof(char) * 6);
+int l;
+l = _strlen(str);
+m = malloc(sizeof(char) * l);
 if (m == NULL)
 {
 return (NULL);
@@ -22,4 +24,21 @@ m[i] = *(str++);
 i++;
 }
 return (m);
+}
+
+/**
+ * _strlen - returns the length of a string
+ * @s: string to evaluate
+ *
+ * Return: the length of the string
+ */
+int _strlen(char *s)
+{
+int cou = 0;
+while (*s != '\0')
+{
+s++;
+cou++;
+}
+return (cou);
 }
