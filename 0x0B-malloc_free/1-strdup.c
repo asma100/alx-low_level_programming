@@ -12,20 +12,19 @@ int i;
 char *m;
 int l;
 l = _strlen(str);
-
 if (str == NULL)
 {
 return (NULL);
 }
-m = malloc(sizeof(char) * (l+1));
+m = malloc(sizeof(char) * (l + 1));
 if (m == NULL)
 {
 return (NULL);
 }
 i = 0;
-while (i < '\0')
+while (str[i])
 {
-m[i] = *(str++);
+m[i] = str[i];
 i++;
 }
 return (m);
