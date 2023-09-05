@@ -12,7 +12,12 @@ int i;
 char *m;
 int l;
 l = _strlen(str);
- m = malloc(sizeof(char) * (l+1));
+
+if (str == NULL)
+{
+return (NULL);
+}
+m = malloc(sizeof(char) * (l+1));
 if (m == NULL)
 {
 return (NULL);
