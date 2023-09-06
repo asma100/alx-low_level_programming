@@ -20,7 +20,7 @@ else
 int x, y, z;
 y = _atoi(argv[1]);
 x = _atoi(argv[2]);
-z = y * z;
+z = y * x;
 printf("%d\n", z);
 }
 return (0);
