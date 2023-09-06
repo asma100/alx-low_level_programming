@@ -9,9 +9,11 @@
  */
 int main(int argc __attribute__((unused)), char *argv[])
 {
+int x;
 int i = 0;
 while (argv[i])
 i++;
-printf("%d\n", i);
+x = i - 1;
+printf("%d\n", x);
 return (0);
 }
