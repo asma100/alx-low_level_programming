@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * str_concat - concatenates two strings.
+ * string_nconcat - concatenates two strings.
  * @s1: string 1
  * @s2:string 2
  * @n:bytes of s2 to be printed
