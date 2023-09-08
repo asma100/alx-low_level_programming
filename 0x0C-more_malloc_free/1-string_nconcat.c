@@ -1,6 +1,9 @@
 #include "main.h"
-#include <stdlib.h>
-
+11;rgb:0000/0000/0000#include <stdlib.h>
+int _strlen(char *s);
+char *_strcpy(char *dest, char *src);
+char *_strncat(char *dest, char *src, int n);
+char *_strcat(char *dest, char *src);
 /**
  * string_nconcat - concatenates two strings.
  * @s1: string 1
@@ -10,37 +13,26 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-int i = 0;
-unsigned int j = 0;
-char *m;
-int l1 = 0;
-int l2 = 0;
-if (s1 != NULL)
-l1 = _strlen(s1);
-if (s2 != NULL)
-l2 = _strlen(s2);
-m = malloc(sizeof(char) * (l1 + l2 + 1));
-if (m == NULL)
-return (NULL);
-if (s1 != NULL)
+unsigned int s2_len;
+char *result;
+if (s1 == NULL)
 {
-while (s1[i])
+s1 = "";
+}
+if (s2 == NULL)
 {
-m[i] = s1[i];
-i++;
+s2 = "";
 }
-}
-if (s2 != NULL)
+s2_len = _strlen(s2);
+if (n >= s2_len)
 {
-while (j < n)
-{
-m[i] = s2[j];
-i++;
-j++;
+n = s2_len;
 }
-}
-m[i] = '\0';
-return (m);
+result = (char *) malloc(_strlen(s1) + n + 1);
+_strcpy(result, s1);
+_strncat(result, s2, n);
+_strcat(result, "");
+return (result);
 }
 /**
  * _strlen - returns the length of a string
@@ -57,4 +49,84 @@ s++;
 cou++;
 }
 return (cou);
+}
+/**
+ * char *_strcpy - a function that copies the string pointed to by src
+ * @dest: copy to
+ * @src: copy from
+ * Return: string
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int l, i;
+
+	l = 0;
+
+	while (src[l] != '\0')
+	{
+		l++;
+	}
+
+	for (i = 0; i < l; i++)
+	{
+		dest[i] = src[i];
+	}
+	dest[i] = '\0';
+
+	return (dest);
+}
+/**
+ * _strncat - concatenates 2 strings.
+ * @dest: string with concatenation
+ * @src: string to be concatenated
+ * @n: input value
+ * Return: dest.
+ */
+char *_strncat(char *dest, char *src, int n)
+{
+int i;
+int j;
+i = 0;
+j = 0;
+for (i = 0; i < 97; i++)
+{
+if (*(dest + i) == '\0')
+{
+while (*(src + j) != '\0' && j < n)
+{
+*(dest + i) = *(src + j);
+j++;
+i++;
+}
+}
+}
+return (dest);
+}
+/**
+ * _strcat - concatenates 2 strings.
+ * @dest: string with concatenation
+ * @src: string to be concatenated
+ * Return: dest.
+ */
+char *_strcat(char *dest, char *src)
+{
+int i;
+int j;
+i = 0;
+j = 0;
+for (i = 0; i < 97; i++)
+{
+if (*(dest + i) == '\0')
+{
+while (*(src + j) != '\0')
+{
+*(dest + i) = *(src + j);
+j++;
+i++;
+}
+*(src + j) = '\0';
+}
+}
+return (dest);
 }
