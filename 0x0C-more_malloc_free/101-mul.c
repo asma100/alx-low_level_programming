@@ -1,69 +1,77 @@
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
+#include <stdio.h>
 
- 
+#define ERR_MSG "Error"
 
-
-
-int _strlen(char *s);
-int multiply(int num1, int num2);
-int _isdigit(int c);
-int _atoi(char *s);
 /**
  * main - multiplies two positive numbers
  * @argc: number of arguments
  * @argv: array of arguments
  *
- * Return: Always 0 (Success)
+ * Return: always 0 (Success)
  */
 int main(int argc, char *argv[])
 {
-int num1, num2, result, i;
-char *num1_str;
-char *num2_str;
-if (argc != 3)
-{
-printf("Error\n");
-return (98);
-}
-num1_str = argv[1];
-num2_str = argv[2];
-for ( i = 0; i < _strlen(num1_str); i++)
-{
-if (!_isdigit(num1_str[i]))
-{
-printf("Error\n");
-return (98);
-}
-}
-for ( i = 0; i < _strlen(num2_str); i++)
-{
-if (!_isdigit(num2_str[i]))
-{
-printf("Error\n");
-return (98);
-}
-}
-num1 = _atoi(num1_str);
-num2 = _atoi(num2_str);
-result = multiply(num1, num2);
-printf("%d\n", result);
-return (0);
+	char *s1, *s2;
+	int l1, l2, len, i, c, d1, d2, *res, a = 0;
+
+	s1 = argv[1], s2 = argv[2];
+	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
+		errors();
+	l1 = _strlen(s1);
+	l2 = _strlen(s2);
+	len = l1 + l2 + 1;
+	res = malloc(sizeof(int) * len);
+	if (!res)
+		return (1);
+	for (i = 0; i <= l1 + l2; i++)
+		res[i] = 0;
+	for (l1 = l1 - 1; l1 >= 0; l1--)
+	{
+		d1 = s1[l1] - '0';
+		c = 0;
+		for (l2 = _strlen(s2) - 1; l2 >= 0; l2--)
+		{
+			d2 = s2[l2] - '0';
+			c += res[l1 + l2 + 1] + (d1 * d2);
+			res[l1 + l2 + 1] = c % 10;
+			c /= 10;
+		}
+		if (c > 0)
+			res[l1 + l2 + 1] += c;
+	}
+	for (i = 0; i < len - 1; i++)
+	{
+		if (res[i])
+			a = 1;
+		if (a)
+			_putchar(res[i] + '0');
+	}
+	if (!a)
+		_putchar('0');
+	_putchar('\n');
+	free(res);
+	return (0);
 }
 /**
- * multiply - multiplies two positive numbers
- * @num1:first num
- * @num2 sc num
- * 
- * Return :int
+ * is_digit - checks if a string contains a non-digit char
+ * @s: string to be evaluated
+ *
+ * Return: 0 if a non-digit is found, 1 otherwise
  */
-int multiply(int num1, int num2) {
-    return num1 * num2;
+int is_digit(char *s)
+{
+	int i = 0;
+
+	while (s[i])
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
 }
-
-
 /**
  * _strlen - returns the length of a string
  * @s: string to evaluate
@@ -72,74 +80,22 @@ int multiply(int num1, int num2) {
  */
 int _strlen(char *s)
 {
-int cou = 0;
-while (*s != '\0')
-{
-s++;
-cou++;
-}
-return (cou);
-}
+	int i = 0;
 
-
-/**
- * _isdigit - check if char is digit
- * @c: is the int to be checked
- * Return: 1 if int is digit, otherwise 0.
- */
-
-int _isdigit(int c)
-{
-if (c >= '0' && c <= '9')
-{
-return (1);
-}
-else
-return (0);
-}
-
-/**
- * _atoi - converts a string to an integer
- * @s: string to be converted
- *
- * Return: the int converted from the string
- */
-
-int _atoi(char *s)
-{
-	int i, d, n, ln, f, digit;
-
-	i = 0;
-	d = 0;
-	n = 0;
-	ln = 0;
-	f = 0;
-	digit = 0;
-
-	while (s[ln] != '\0')
-		ln++;
-
-	while (i < ln && f == 0)
+	while (s[i] != '\0')
 	{
-		if (s[i] == '-')
-			++d;
-
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			digit = s[i] - '0';
-			if (d % 2)
-				digit = -digit;
-			n = n * 10 + digit;
-			f = 1;
-			if (s[i + 1] < '0' || s[i + 1] > '9')
-				break;
-			f = 0;
-		}
 		i++;
 	}
-
-	if (f == 0)
-		return (0);
-
-	return (n);
+	return (i);
 }
+
+/**
+ * errors - handles errors for main
+ */
+void errors(void)
+{
+	printf("Error\n");
+	exit(98);
+}
+
+
