@@ -1,8 +1,4 @@
 #include "main.h"
-int _strlen(char *s);
-char *_strcpy(char *dest, char *src);
-char *_strncat(char *dest, char *src, int n);
-char *_strcat(char *dest, char *src);
 /**
  * string_nconcat - concatenates two strings.
  * @s1: string 1
@@ -12,120 +8,35 @@ char *_strcat(char *dest, char *src);
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-unsigned int s2_len;
-char *result;
-if (s1 == NULL)
-{
-s1 = "";
-}
-if (s2 == NULL)
-{
-s2 = "";
-}
-s2_len = _strlen(s2);
-if (n >= s2_len)
-{
-n = s2_len;
-}
-result = (char *) malloc(_strlen(s1) + n + 1);
-_strcpy(result, s1);
-_strncat(result, s2, n);
-_strcat(result, "");
-return (result);
-}
-/**
- * _strlen - returns the length of a string
- * @s: string to evaluate
- *
- * Return: the length of the string
- */
-int _strlen(char *s)
-{
-int cou = 0;
-while (*s != '\0')
-{
-s++;
-cou++;
-}
-return (cou);
-}
-/**
- * char *_strcpy - a function that copies the string pointed to by src
- * @dest: copy to
- * @src: copy from
- * Return: string
- */
+char *s;
+	unsigned int i = 0, j = 0, l1 = 0, l2 = 0;
 
-char *_strcpy(char *dest, char *src)
-{
-	int l, i;
+	while (s1 && s1[l1])
+		l1++;
+	while (s2 && s2[l2])
+		l2++;
 
-	l = 0;
+	if (n < l2)
+		s = malloc(sizeof(char) * (l1 + n + 1));
+	else
+		s = malloc(sizeof(char) * (l1 + l2 + 1));
 
-	while (src[l] != '\0')
+	if (!s)
+		return (NULL);
+
+	while (i < l1)
 	{
-		l++;
+		s[i] = s1[i];
+		i++;
 	}
 
-	for (i = 0; i < l; i++)
-	{
-		dest[i] = src[i];
-	}
-	dest[i] = '\0';
+	while (n < l2 && i < (l1 + n))
+		s[i++] = s2[j++];
 
-	return (dest);
-}
-/**
- * _strncat - concatenates 2 strings.
- * @dest: string with concatenation
- * @src: string to be concatenated
- * @n: input value
- * Return: dest.
- */
-char *_strncat(char *dest, char *src, int n)
-{
-int i;
-int j;
-i = 0;
-j = 0;
-for (i = 0; i < 97; i++)
-{
-if (*(dest + i) == '\0')
-{
-while (*(src + j) != '\0' && j < n)
-{
-*(dest + i) = *(src + j);
-j++;
-i++;
-}
-}
-}
-return (dest);
-}
-/**
- * _strcat - concatenates 2 strings.
- * @dest: string with concatenation
- * @src: string to be concatenated
- * Return: dest.
- */
-char *_strcat(char *dest, char *src)
-{
-int i;
-int j;
-i = 0;
-j = 0;
-for (i = 0; i < 97; i++)
-{
-if (*(dest + i) == '\0')
-{
-while (*(src + j) != '\0')
-{
-*(dest + i) = *(src + j);
-j++;
-i++;
-}
-*(src + j) = '\0';
-}
-}
-return (dest);
+	while (n >= l2 && i < (l1 + l2))
+		s[i++] = s2[j++];
+
+	s[i] = '\0';
+
+	return (s);
 }
