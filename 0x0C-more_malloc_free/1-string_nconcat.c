@@ -1,5 +1,4 @@
 #include "main.h"
-11;rgb:0000/0000/0000#include <stdlib.h>
 int _strlen(char *s);
 char *_strcpy(char *dest, char *src);
 char *_strncat(char *dest, char *src, int n);
