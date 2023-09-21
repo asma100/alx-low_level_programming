@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include <string.h>
+11;rgb:0000/0000/0000#include <string.h>
 #include "lists.h"
 
 /**
@@ -7,7 +7,7 @@
  * @head:  pointer to the list_t list
  * @str: new string to add in the node
  *
- * Return: the address, or NULL 
+ * Return: the address, or NULL
  */
 list_t *add_node(list_t **head, const char *str)
 {
