@@ -10,15 +10,14 @@
 
 size_t list_len(const list_t *h)
 {
-int count = 0;
-while (h != NULL)
-{
-count++;
-if (h->str == NULL)
-printf("[0] (nil)\n");
-else
-printf("[%d]%s\n", h->len, h->str);
-h = h->next;
-}
-return (count);
+    size_t count = 0;
+    const list_t *current = h;
+
+    while (current != NULL)
+    {
+        count++;
+        current = current->next;
+    }
+
+    return count;
 }
