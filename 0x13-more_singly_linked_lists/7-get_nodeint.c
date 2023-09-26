@@ -12,7 +12,12 @@ unsigned int i;
 p = head;
 for (i = 0; i < index; i++)
 p = p->next;
-if(p == NULL)
-return (NULL);
+if (p != NULL)
+{
 return (p);
+}
+else
+{
+return (NULL);
+}
 }
