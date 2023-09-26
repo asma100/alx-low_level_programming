@@ -1,0 +1,19 @@
+#include "lists.h"
+/**
+ * sum_listint - sum of all the data (n)
+ *
+ * @h:pointer to list
+ * Return: size_t
+ */
+int sum_listint(listint_t *head)
+{
+size_t sum = 0;
+listint_t *p;
+p = head;
+while (p != NULL)
+{
+sum=p->n + sum;
+p = p->next;
+}
+return (sum);
+}
