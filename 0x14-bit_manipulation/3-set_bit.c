@@ -14,5 +14,5 @@ return (-1);
 }
 mask <<= index;
 *n |= mask;
-return (0);
+return (1);
 }
