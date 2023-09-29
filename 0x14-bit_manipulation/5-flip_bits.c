@@ -1,0 +1,18 @@
+#include "main.h"
+/**
+ * flip_bits - number of bits you would need to flip
+ * @n:unsigned long int
+ * @m:unsigned lunsigned ong int
+ * Return: int
+ */
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
+{
+unsigned long int mask = n ^ m;
+unsigned int fliped = 0;
+while (mask != 0)
+{
+fliped += mask & 1UL;
+mask >>= 1;
+}
+return (fliped);
+}
