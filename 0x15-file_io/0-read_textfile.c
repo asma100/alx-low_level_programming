@@ -11,11 +11,11 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 
-ssize_t nr,nw;
+ssize_t nr, nw;
 int fd;
-char*c;
+char *c;
 fd = open(filename, O_RDONLY);
-if (fd < 0) 
+if (fd < 0)
 {
 return (0);
 perror("open");
@@ -29,7 +29,7 @@ exit(1);
 return (0);
 }
 nr = read(fd, c, letters);
-if (nr < 0) 
+if (nr < 0)
 {
 perror("read");
 exit(1);
@@ -37,7 +37,7 @@ return (0);
 }
 if (c == NULL)
 return (0);
-nw=write(STDOUT_FILENO, c, nr);
+nw = write(STDOUT_FILENO, c, nr);
 free(c);
 close(fd);
 return (nw);
