@@ -34,6 +34,8 @@ else
 {
 create_file(filename, NULL);
 }
+if (fd == -1 || wn == -1)
+return (-1); 
 close(fd);
 return (1);
 }
