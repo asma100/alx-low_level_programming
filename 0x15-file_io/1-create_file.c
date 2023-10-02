@@ -9,29 +9,32 @@
 */
 int create_file(const char *filename, char *text_content)
 {
-ssize_t wn;
 mode_t m = 0600;
-int fd;
+int fd, wn, s;
+s = 0;
+if (text_content != NULL)
+{
+_strlen(text_content);
+}
 if (filename == NULL)
 return (-1);
-fd = open(filename, O_CREAT | O_WRONLY| O_TRUNC, m);
-if (fd < 0) 
+fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, m);
+if (fd < 0)
 {
 perror("open");
 return (-1);
 }
-if (text_content != NULL) {
-wn = write(fd, text_content, _strlen(text_content));
-if (wn < 0) {
+if (text_content != NULL)
+{
+wn = write(fd, text_content, s);
+if (wn < 0)
+{
 perror("write");
 close(fd);
 return (-1);
 }
 }
-else
-{
-create_file(filename, NULL);
-}
+
 close(fd);
 return (1);
 }
