@@ -14,7 +14,7 @@ mode_t m = 0600;
 int fd;
 if (filename == NULL)
 return (-1);
-fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, m);
+fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, m);
 if (fd < 0)
 {
 perror("open");
