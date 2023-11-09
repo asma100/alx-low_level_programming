@@ -2,7 +2,7 @@
 /**
  * add_dnodeint - add nodeint
  * dlistint_t list
- * @n: int 
+ * @n: int
  * @head: pointer
  * Return: number of nodes
  */
@@ -15,7 +15,7 @@ if (*head == NULL)
 if (*head == NULL)
 {
 dprintf(2, "Error: Can't malloc\n");
-return NULL;
+return (NULL);
 }
 (*head)->n = n;
 (*head)->prev = NULL;
@@ -27,7 +27,7 @@ new = malloc(sizeof(dlistint_t));
 if (new == NULL)
 {
 dprintf(2, "Error: Can't malloc\n");
-return NULL; 
+return (NULL);
 }
 new->n = n;
 (*head)->prev = new;
@@ -35,5 +35,5 @@ new->next = *head;
 new->prev = NULL;
 *head = new;
 }
-return *head;
+return (*head);
 }

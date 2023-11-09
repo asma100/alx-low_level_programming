@@ -12,7 +12,6 @@ int  count = 0;
 const dlistint_t *p;
 if (h == NULL)
 return (count);
-
 while (h->prev != NULL)
 h = h->prev;
 p = h;

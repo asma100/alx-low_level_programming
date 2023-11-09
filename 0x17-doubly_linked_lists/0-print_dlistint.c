@@ -14,7 +14,7 @@ if (h == NULL)
 return (count);
 
 while (h->prev != NULL)
-		h = h->prev;
+h = h->prev;
 p = h;
 while (p != NULL)
 {
