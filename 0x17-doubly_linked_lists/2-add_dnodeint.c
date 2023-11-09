@@ -1,27 +1,39 @@
 #include "lists.h"
 /**
- * print_dlistint - prints num
+ * add_dnodeint - add nodeint
  * dlistint_t list
- *
- * @h: pointer
+ * @n: int 
+ * @head: pointer
  * Return: number of nodes
  */
-size_t print_dlistint(const dlistint_t *h)
+dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-int  count = 0;
-const dlistint_t *p;
-if (h == NULL)
-return (count);
-
-while (h->prev != NULL)
-                h = h->prev;
-p = h;
-while (p != NULL)
+dlistint_t *new;
+if (*head == NULL)
 {
-if (h != NULL)
-count += 1;
-p = p->next;
+*head = malloc(sizeof(dlistint_t));
+if (*head == NULL)
+{
+dprintf(2, "Error: Can't malloc\n");
+return NULL;
 }
-
-return (count);
+(*head)->n = n;
+(*head)->prev = NULL;
+(*head)->next = NULL;
+}
+else
+{
+new = malloc(sizeof(dlistint_t));
+if (new == NULL)
+{
+dprintf(2, "Error: Can't malloc\n");
+return NULL; 
+}
+new->n = n;
+(*head)->prev = new;
+new->next = *head;
+new->prev = NULL;
+*head = new;
+}
+return *head;
 }
