@@ -9,51 +9,42 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-unsigned int count = 0;
-dlistint_t *new;
-dlistint_t *p;
-dlistint_t *head = *h;
-if (head == NULL && idx > 0)
+dlistint_t *new_node, *temp = *h;
+unsigned int i = 0;
+if (temp == NULL && idx > 0)
 return (NULL);
-while (head != NULL && head->prev != NULL)
-head = head->prev;
-p = head;
-while (p != NULL)
-{
-if (count == idx)
-{        
-new = malloc(sizeof(dlistint_t));
-if (new == NULL)
-{
-dprintf(2, "Error: Can't malloc\n");
+while (temp != NULL && temp->prev != NULL)
+temp = temp->prev;
+new_node = malloc(sizeof(dlistint_t));
+if (new_node == NULL)
 return (NULL);
-}
-new->n = n;
+new_node->n = n;
 if (idx == 0)
 {
-new->next = head;
-new->prev = NULL;
-if (head != NULL)
-head->prev = new;
-*h = new;
+new_node->next = temp;
+new_node->prev = NULL;
+if (temp != NULL)
+temp->prev = new_node;
+*h = new_node;
+return (new_node);
 }
-else
+for (i = 0; i < idx - 1; i++)
 {
-new->next = p;
-new->prev = p->prev;
-if (p->prev != NULL)
-p->prev->next = new;
-p->prev = new;
-}
-return (new);
-}
-count += 1;
-p = p->next;
-head = head->next;
-}
-if (idx == count)
+if (temp == NULL)
 {
-return add_dnodeint_end(h, n);
-}
+free(new_node);
 return (NULL);
+}
+temp = temp->next;
+}
+if (temp->next == NULL)
+{
+free(new_node);
+return (add_dnodeint_end(h, n));
+}
+new_node->next = temp->next;
+new_node->prev = temp;
+temp->next->prev = new_node;
+temp->next = new_node;
+return (new_node);
 }
