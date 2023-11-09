@@ -1,0 +1,29 @@
+#include "lists.h"
+/**
+ * free_dlistint - free nodeint
+ *
+ *
+ * @head: pointer
+ * Return: none
+ */
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
+{
+unsigned int  count = 0;
+const dlistint_t *p;
+if (head == NULL)
+return (count);
+
+while (head->prev != NULL)
+head = head->prev;
+p = head;
+while (p != NULL)
+{
+if (head != NULL)
+{
+if(count == index)
+return (head->n);
+}
+count += 1;
+p = p->next;
+}
+}
