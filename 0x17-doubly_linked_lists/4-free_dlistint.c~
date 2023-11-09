@@ -1,0 +1,23 @@
+#include "lists.h"
+/**
+ * free_dlistint - free nodeint
+ *
+ *
+ * @head: pointer
+ * Return: none
+ */
+void free_dlistint(dlistint_t *head)
+{
+dlistint_t *current, *temp;
+current = head;
+while (current != NULL)
+{
+if(current->next)
+{
+temp = current->next;
+free(current->n);
+}
+free(current);
+current = temp;
+}
+}
