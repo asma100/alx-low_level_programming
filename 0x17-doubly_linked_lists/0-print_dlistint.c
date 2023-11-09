@@ -19,7 +19,7 @@ p = h;
 while (p != NULL)
 {
 if (h != NULL)
-printf("%d \n", p->n);
+printf("%d\n", p->n);
 else
 printf("[0] (nil)\n");
 count += 1;
