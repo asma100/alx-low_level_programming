@@ -1,10 +1,10 @@
 #include "lists.h"
-
+11;rgb:0000/0000/0000
 /**
  * delete_dnodeint_at_index - get dnodeint at index
  *
  * @index: int
- *
+ * @head: pointer
  * Return: value
  */
 
