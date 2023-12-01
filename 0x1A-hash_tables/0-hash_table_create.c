@@ -5,35 +5,34 @@
 
 /**
  * hash_table_create - hash_table_create
- * @size:unsigned long int
- * Return: ht
+ * @tableSize: unsigned long int
+ * Return: hashTablePointer
  */
-hash_table_t *hash_table_create(unsigned long int size)
+hash_table_t *hash_table_create(unsigned long int tableSize)
 {
-    hash_table_t *ht = NULL;
-    hash_node_t **array = NULL;
-    unsigned long int i;
-    /* Allocate memory for the hash table structure */
-    ht = malloc(sizeof(hash_table_t));
-    if (!ht) {
-        return NULL;
-    }
+hash_table_t *hashTablePointer = NULL;
+hash_node_t **arrayPointer = NULL;
+unsigned long int index;
 
-    /* Allocate memory for the hash table array */
-    array = malloc(sizeof(hash_node_t *) * size);
-    if (!array) {
-        free(ht);
-        return NULL;
-    }
 
-    /* Initialize each cell of the hash table array to NULL */
-    for (i = 0; i < size; i++) {
-        array[i] = NULL;
-    }
+hashTablePointer = malloc(sizeof(hash_table_t));
+if (!hashTablePointer) {
+return NULL;
+}
 
-    /* Set the hash table's size and array */
-    ht->size = size;
-    ht->array = array;
 
-    return ht;
+arrayPointer = malloc(sizeof(hash_node_t *) * tableSize);
+if (!arrayPointer) {
+free(hashTablePointer);
+return NULL;
+}
+
+
+for (index = 0; index < tableSize; index++) {
+arrayPointer[index] = NULL;
+}
+
+hashTablePointer->size = tableSize;
+hashTablePointer->array = arrayPointer;
+return hashTablePointer;
 }
