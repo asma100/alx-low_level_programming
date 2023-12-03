@@ -6,7 +6,7 @@
  * hash_table_delete - delete
  * @ht: the hash table to print
  */
- void hash_table_delete(hash_table_t *ht)
+void hash_table_delete(hash_table_t *ht)
 {
 unsigned long int i;
 hash_node_t *node = NULL;
