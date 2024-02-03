@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "hash_tables.h"
 /**
- * key_index - find index from key 
+ * key_index - find index from key
  * @key: const unsigned char
  * @size:unsigned long int
  * Return: index
