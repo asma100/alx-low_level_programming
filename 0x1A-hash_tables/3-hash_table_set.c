@@ -1,0 +1,36 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "hash_tables.h"
+
+/**
+ * hash_table_set - hash_table_create
+ * @key: const unsigned char
+ * @hthash_table_t
+ * @value
+ * Return: hashTablePointer
+ */
+int hash_table_set(hash_table_t *ht, const char *key, const char *value)
+{
+unsigned long int hash_value = hash_djb2((const unsigned char *)key);
+int index = hash_value % ht->size;
+hash_node_t *new_node = malloc(sizeof(hash_node_t));
+new_node->key = strdup(key);
+new_node->value = strdup(value);
+new_node->next = NULL;
+
+if (ht->array[index] == NULL)
+{
+ht->array[index] = new_node;
+}
+else
+{
+hash_node_t *current = ht->array[index];
+while (current->next != NULL) {
+current = current->next;
+}
+current->next = new_node;
+}
+
+return 1;
+}
