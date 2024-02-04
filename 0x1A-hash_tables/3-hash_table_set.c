@@ -6,8 +6,8 @@
 /**
  * hash_table_set - hash_table_create
  * @key: const unsigned char
- * @hthash_table_t
- * @value
+ * @ht :hash table
+ * @value : char
  * Return: hashTablePointer
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
