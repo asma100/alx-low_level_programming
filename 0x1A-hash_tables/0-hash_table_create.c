@@ -2,7 +2,7 @@
 #include "hash_tables.h"
 /**
  * hash_table_create - hash_table_create
- * @tableSize: unsigned long int
+ * @Size: unsigned long int
  * Return: hashTablePointer
  */
 hash_table_t *hash_table_create(unsigned long int size)
