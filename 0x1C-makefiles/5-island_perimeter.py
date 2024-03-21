@@ -9,33 +9,18 @@ def count_islands(grid):
   Returns:
       The number of isolated islands in the grid.
   """
-  rows, cols = len(grid), len(grid[0])
+ 
   count = 0
-  visited = [[False for _ in range(cols)] for _ in range(rows)]  # Create a visited grid to avoid revisiting cells
+length = len(grid) - 1
+ width = len(grid[0]) - 1
 
-  def dfs(row, col):
-    """
-    Performs a Depth-First Search (DFS) to explore a connected island.
+ for i, row in enumerate(grid):  # Replaced 'r' with 'row' for clarity
+   for j, cell in enumerate(row):  # Replaced 'n' with 'cell' for clarity
+     if cell == 1:  # Check for island cell
+       # Check all four neighbors (using conditional expressions for brevity)
+       count += (1 if i == 0 or grid[i - 1][j] != 1 else 0)
+       count += (1 if j == 0 or grid[i][j - 1] != 1 else 0)
+       count += (1 if j == width or grid[i][j + 1] != 1 else 0)
+       count += (1 if i == length or grid[i + 1][j] != 1 else 0)
 
-    Args:
-        row: The current row index.
-        col: The current column index.
-    """
-    if row < 0 or row >= rows or col < 0 or col >= cols or grid[row][col] == 0 or visited[row][col]:
-      return
-
-    visited[row][col] = True  # Mark current cell as visited
-
-    # Explore all four directions (up, down, left, right)
-    dfs(row + 1, col)
-    dfs(row - 1, col)
-    dfs(row, col + 1)
-    dfs(row, col - 1)
-
-  for row in range(rows):
-    for col in range(cols):
-      if grid[row][col] == 1 and not visited[row][col]:
-        dfs(row, col)
-        count += 1  # Increment count for a new island
-
-  return count
+ return count
