@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""modul"""
 def count_islands(grid):
   """
   Counts the number of isolated islands (areas surrounded by 0s) in a grid.
@@ -10,17 +11,19 @@ def count_islands(grid):
       The number of isolated islands in the grid.
   """
  
-  count = 0
-length = len(grid) - 1
- width = len(grid[0]) - 1
+count = 0
+for i in range(len(grid)):
+  for j in range(len(grid[i])):
+    if grid[i][j] == 1:  # Check if current cell is land (1)
+      # Check all four neighbors for water (0) and increment count if found
+      if i == 0 or grid[i - 1][j] == 0:
+        count += 1
+      if j == 0 or grid[i][j - 1] == 0:
+        count += 1
+      if i == len(grid) - 1 or grid[i + 1][j] == 0:
+        count += 1
+      if j == len(grid[i]) - 1 or grid[i][j + 1] == 0:
+        count += 1
 
- for i, row in enumerate(grid):  # Replaced 'r' with 'row' for clarity
-   for j, cell in enumerate(row):  # Replaced 'n' with 'cell' for clarity
-     if cell == 1:  # Check for island cell
-       # Check all four neighbors (using conditional expressions for brevity)
-       count += (1 if i == 0 or grid[i - 1][j] != 1 else 0)
-       count += (1 if j == 0 or grid[i][j - 1] != 1 else 0)
-       count += (1 if j == width or grid[i][j + 1] != 1 else 0)
-       count += (1 if i == length or grid[i + 1][j] != 1 else 0)
-
- return count
+# This part remains unchanged as it doesn't modify the logic
+return count
