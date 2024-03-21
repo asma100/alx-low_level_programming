@@ -9,8 +9,8 @@ all: $(OBJ)
 clean:
 	$(rm) -f *~ school
 oclean:
-    	$(rm)  -f $(OBJ)
+	$(rm)  -f $(OBJ)
 fclean:
-    	$(rm)  -f *~ school $(OBJ)
+	$(rm)  -f *~ school $(OBJ)
 re:
-    	oclean all
+	oclean all
