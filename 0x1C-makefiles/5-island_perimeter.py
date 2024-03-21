@@ -1,29 +1,35 @@
 #!/usr/bin/python3
-"""modul"""
-def count_islands(grid):
+
+"""
+island_perimeter module
+
+This module defines a function to calculate the perimeter of the island in a grid.
+
+An island is considered a group of connected 1s (land) surrounded by 0s (water).
+The perimeter is the total number of sides bordering water.
+"""
+
+
+def island_perimeter(grid):
   """
-  Counts the number of isolated islands (areas surrounded by 0s) in a grid.
+  Calculates the perimeter of the island in a grid.
 
   Args:
       grid: A list of lists representing the grid, where 0 represents water and 1 represents land.
 
   Returns:
-      The number of isolated islands in the grid.
+      The perimeter of the island in the grid.
   """
- 
-count = 0
-for i in range(len(grid)):
-  for j in range(len(grid[i])):
-    if grid[i][j] == 1:  # Check if current cell is land (1)
-      # Check all four neighbors for water (0) and increment count if found
-      if i == 0 or grid[i - 1][j] == 0:
-        count += 1
-      if j == 0 or grid[i][j - 1] == 0:
-        count += 1
-      if i == len(grid) - 1 or grid[i + 1][j] == 0:
-        count += 1
-      if j == len(grid[i]) - 1 or grid[i][j + 1] == 0:
-        count += 1
+  rows, cols = len(grid), len(grid[0])
+  perimeter = 0
 
-# This part remains unchanged as it doesn't modify the logic
-return count
+  for row in range(rows):
+    for col in range(cols):
+      if grid[row][col] == 1:
+        # Check all four neighbors for water (0) and add 1 to perimeter if found
+        perimeter += (1 if row == 0 or grid[row - 1][col] == 0 else 0)
+        perimeter += (1 if col == 0 or grid[row][col - 1] == 0 else 0)
+        perimeter += (1 if row == rows - 1 or grid[row + 1][col] == 0 else 0)
+        perimeter += (1 if col == cols - 1 or grid[row][col + 1] == 0 else 0)
+
+  return perimeter
