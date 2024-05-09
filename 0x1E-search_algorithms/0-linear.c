@@ -2,9 +2,17 @@
 #include <stdlib.h>
 #include "search_algos.h"
 
+/**
+ * linear_search -  search
+ * @array:array
+ * @size:size
+ * @value: value
+ *
+ * Return: index , -1
+ */
 int linear_search(int *array, size_t size, int value)
 {
-  size_t i;
+size_t i;
 if (array == NULL)
 {
 return (-1);
