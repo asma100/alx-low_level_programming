@@ -10,17 +10,20 @@
  * Return: index , -1
  */
 
-int binary_search(const int *array, size_t size, int value)
+int binary_search(int *array, size_t size, int value)
 {
+size_t low;
+size_t high;
+size_t c;
 if (array == NULL || size == 0)
 {
 return (-1);
 }
-size_t low = 0;
-size_t high = size - 1;
+low = 0;
+high = size - 1;
 while (low <= high)
 {
-size_t c = low + (high - low) / 2;
+c = low + (high - low) / 2;
 if (array[c] == value)
 {
 return (c);
